@@ -59,3 +59,14 @@ export const deleteTemplate = (name) =>
 // Messages
 export const sendMessage = (data) =>
   meta.post(`${pid()}/messages`, { messaging_product: 'whatsapp', ...data })
+
+// Analytics
+export const fetchAnalytics = (start, end, granularity = 'DAY') =>
+  meta.get(waba(), {
+    fields: `analytics.start(${start}).end(${end}).granularity(${granularity}).phone_numbers([])`,
+  })
+
+export const fetchConversationAnalytics = (start, end, granularity = 'MONTHLY') =>
+  meta.get(waba(), {
+    fields: `conversation_analytics.start(${start}).end(${end}).granularity(${granularity}).dimensions(["conversation_type","conversation_direction"])`,
+  })

@@ -6,6 +6,7 @@ import ProfilePage from './pages/ProfilePage'
 import PhoneNumbersPage from './pages/PhoneNumbersPage'
 import TemplatesPage from './pages/TemplatesPage'
 import MessagesPage from './pages/MessagesPage'
+import BillingPage from './pages/BillingPage'
 import SettingsPage from './pages/SettingsPage'
 
 function RequireConfig({ children }) {
@@ -23,6 +24,7 @@ export default function App() {
         <Route path="/phone-numbers" element={<RequireConfig><PhoneNumbersPage /></RequireConfig>} />
         <Route path="/templates" element={<RequireConfig><TemplatesPage /></RequireConfig>} />
         <Route path="/messages" element={<RequireConfig><MessagesPage /></RequireConfig>} />
+        <Route path="/billing" element={<RequireConfig><BillingPage /></RequireConfig>} />
       </Routes>
     </Layout>
   )
