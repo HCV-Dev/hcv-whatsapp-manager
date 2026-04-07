@@ -40,13 +40,11 @@ cd frontend
 npm run build
 ```
 
-The `dist/` folder is a fully static site. Deploy it anywhere:
+The `dist/` folder is a fully static site.
 
-**GitHub Pages:**
-```bash
-npm run build
-npx gh-pages -d dist
-```
+**GitHub Pages (automated):**
+
+Push to `main` and the included GitHub Actions workflow will build and deploy automatically. Enable GitHub Pages in your repo settings with **Source: GitHub Actions**.
 
 **Serve locally:**
 ```bash
