@@ -61,7 +61,7 @@ export const sendMessage = (data) =>
   meta.post(`${pid()}/messages`, { messaging_product: 'whatsapp', ...data })
 
 // Analytics
-export const fetchAnalytics = (start, end, granularity = 'DAY') =>
+export const fetchAnalytics = (start, end, granularity = 'DAILY') =>
   meta.get(waba(), {
     fields: `analytics.start(${start}).end(${end}).granularity(${granularity}).phone_numbers([])`,
   })
