@@ -65,10 +65,9 @@ export default function BillingPage() {
     try {
       const start = daysAgo(days)
       const end = daysAgo(0)
-      const granularity = days <= 31 ? 'DAILY' : 'MONTHLY'
       const [msg, conv] = await Promise.all([
-        fetchAnalytics(start, end, granularity),
-        fetchConversationAnalytics(start, end, days <= 31 ? 'DAY' : 'MONTHLY'),
+        fetchAnalytics(start, end, days <= 31 ? 'DAY' : 'MONTH'),
+        fetchConversationAnalytics(start, end, days <= 31 ? 'DAILY' : 'MONTHLY'),
       ])
       setMsgData(msg)
       setConvData(conv)
