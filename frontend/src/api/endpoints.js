@@ -38,6 +38,9 @@ export const fetchPhoneNumbers = async () => {
 export const fetchPhoneNumber = (id) =>
   meta.get(id, { fields: 'display_phone_number,verified_name,quality_rating,id,name_status,code_verification_status' })
 
+export const requestNameChange = (phoneId, pin) =>
+  meta.post(`${phoneId}/register`, { messaging_product: 'whatsapp', pin })
+
 // Templates
 export const fetchTemplates = async () => {
   const res = await meta.get(`${waba()}/message_templates`, {
